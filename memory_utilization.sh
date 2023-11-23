@@ -46,8 +46,6 @@ fi
 function main ()
 {
   memory_util
-  cpu_util
-  disk_util
 }
 
 main
