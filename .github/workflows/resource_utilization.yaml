@@ -1,0 +1,33 @@
+name: System performance workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  memory_utilization:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Memory Performance Monitor
+        run: bash ./memory_utilization.sh
+        shell: bash
+  disk_utilization:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: disk Performance Monitor
+        run: bash ./disk_utilization.sh
+        shell: bash
+  cpu_utilization:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: CPU Performance Monitor
+        run: bash ./cpu_utilization.sh
+        shell: bash
